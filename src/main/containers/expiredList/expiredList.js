@@ -6,6 +6,7 @@ import './expiredList.css';
 
 class ExpiredItem extends React.Component {
     render() {
+        
         let listData = this.props.componentState.dashboardReducers.expiredData
         console.log(listData)
         return (

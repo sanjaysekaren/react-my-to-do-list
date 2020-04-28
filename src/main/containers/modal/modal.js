@@ -20,6 +20,7 @@ class ModalItem extends React.Component {
             this.setState({ date: moment(new Date()).format('YYYY-MM-DD') })
         }
 
+        
     }
     handleTimeChange = (e) => {
         this.setState({ time: e.target.value })
