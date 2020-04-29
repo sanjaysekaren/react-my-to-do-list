@@ -26,13 +26,16 @@ class DashBoard extends React.Component {
       listName: "",
       searchText: "",
       showListNameError: false,
-      width: 1200,
+      width: 0,
       height: 0,
     };
   }
   updateDimensions = () => {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   };
+  componentWillMount() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
   }
@@ -201,6 +204,9 @@ class DashBoard extends React.Component {
           <Card className="screenHandleCard">
             <CardContent>
               Sorry for the inconvience!!! Please view on full screen :)
+              <CardContent>
+                Not compatible for mobile screen
+              </CardContent>
             </CardContent>
           </Card>
         ) : (
