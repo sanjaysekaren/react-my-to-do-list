@@ -1,13 +1,12 @@
-.panelStyle{
-    flex-grow: 1;
-    background-color: coral;
-    padding-left: 5%;
-    padding-right: 5%;
+.panelStyle {
+  flex-grow: 1;
+  background-color: coral;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.expiredContent{
-    text-align: left;
-    font-size: larger;
-    font-weight: bolder;
-    
+.expiredContent {
+  text-align: left;
+  font-size: larger;
+  font-weight: bolder;
 }
