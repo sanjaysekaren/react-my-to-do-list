@@ -135,7 +135,7 @@ class DashBoard extends React.Component {
                 value={this.state.searchText}
                 onChange={this.handlesearchTextChange}
               />
-              <Icon style={{ fontSize: 50 }}>search</Icon>
+              <Icon className="iconStyle">search</Icon>
             </Grid>
           </Grid>
           <Grid item xs={1} sm={1} md={1} lg={1}>
@@ -187,23 +187,23 @@ class DashBoard extends React.Component {
     let displayData = isDetailsFetched ? (
       displayFectchedData
     ) : (
-      <h4 style={{ fontWeight: "bolder" }}>Add New List Items !!</h4>
+      <h4 className="ErrorContent">Add New List Items !!</h4>
     );
     let searchMatched =
       fiteredData.length > 0 ? (
         displayFilteredData
       ) : (
-        <h4 style={{ fontWeight: "bolder" }}>No data found!!</h4>
+        <h4 className="ErrorContent">No data found!!</h4>
       );
-      let dashboardContent = (
-          <div>
-        {this.state.width<1000? 
-            <Card className='screenHandleCard'>
-                <CardContent>
-                    Sorry for the inconvience!!!
-                    Please view on full screen :)
-                </CardContent>
-            </Card>:
+    let dashboardContent = (
+      <div>
+        {this.state.width < 1000 ? (
+          <Card className="screenHandleCard">
+            <CardContent>
+              Sorry for the inconvience!!! Please view on full screen :)
+            </CardContent>
+          </Card>
+        ) : (
           <Card className="mainCardStyle">
             {addListCard}
             <div>{searchCard}</div>
@@ -213,24 +213,28 @@ class DashBoard extends React.Component {
               <Divider />
             </div>
             <div>
-              <h3 style={{ textAlign: "left", paddingLeft: "2%" }}>
-                Expired/Done ListItems
-              </h3>
+              <h3 className="expiredHeader">Expired/Done ListItems</h3>
               {expiredData.length > 0 ? (
                 <containers.ExpiredList />
               ) : (
-                <h4 style={{ fontWeight: "bolder" }}>No Expired Items!!</h4>
+                <h4 className="ErrorContent">No Expired Items!!</h4>
               )}
             </div>
-          </Card>}</div>
-      )
+          </Card>
+        )}
+      </div>
+    );
     return (
-      <div style={{ backgroundColor: "lightGrey" }}>
-          {window.navigator.onLine?dashboardContent:<Card className='screenHandleCard'>
-                <CardContent>
-                    Kindly turn on your network connection !!!
-                </CardContent>
-            </Card>}
+      <div className="cardBGStyle">
+        {window.navigator.onLine ? (
+          dashboardContent
+        ) : (
+          <Card className="screenHandleCard">
+            <CardContent>
+              Kindly turn on your network connection !!!
+            </CardContent>
+          </Card>
+        )}
       </div>
     );
   }

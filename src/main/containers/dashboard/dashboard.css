@@ -31,3 +31,16 @@
     font-weight: bolder;
     margin-bottom: 5%;
 }
+.iconStyle{
+    font-size: 50%;
+}
+.cardBGStyle{
+    background-color: lightgray;
+}
+.ErrorContent{
+    font-weight: bolder;
+}
+.expiredHeader{
+    text-align:left;
+    padding-left: 2%;
+}
