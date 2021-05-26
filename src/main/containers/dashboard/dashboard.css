@@ -1,3 +1,9 @@
+.headerStyle{
+  font-size: 300%;
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
 .cardStyle {
   display: flex;
   flex-grow: 1;
@@ -12,11 +18,11 @@
 }
 
 .mainCardStyle {
-  width: 80%;
+  /* width: 80%;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 5%; */
 }
 .listLabelStyle {
   font-size: larger;
@@ -32,10 +38,11 @@
     margin-bottom: 5%;
 }
 .iconStyle{
-    font-size: 50%;
+    font-size: 70%;
+    margin-top: 15px;
 }
 .cardBGStyle{
-    background-color: lightgray;
+    padding:10%;
 }
 .ErrorContent{
     font-weight: bolder;

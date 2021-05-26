@@ -12,7 +12,7 @@ import {
 import moment from "moment";
 
 import * as containers from "../index";
-import * as Actions from "../../actions";
+import * as Actions from "../../../store/actions";
 import "./dashboard.css";
 
 class DashBoard extends React.Component {
@@ -72,12 +72,13 @@ class DashBoard extends React.Component {
   };
   render() {
     let isDetailsFetched = false;
-    let mainStateList = this.props.componentState.dashboardReducers
-      .mainListData;
+    let mainStateList =
+      this.props.componentState.dashboardReducers.mainListData;
     let expiredData = this.props.componentState.dashboardReducers.expiredData;
-    let fiteredData = this.props.componentState.dashboardReducers.mainListData.filter(
-      (list) => list.listName.includes(this.state.searchText)
-    );
+    let fiteredData =
+      this.props.componentState.dashboardReducers.mainListData.filter((list) =>
+        list.listName.includes(this.state.searchText)
+      );
     let noOfItemInList = mainStateList.length;
 
     if (noOfItemInList > 0) {
@@ -85,11 +86,9 @@ class DashBoard extends React.Component {
     }
     let addListCard = (
       <Card>
+        <div className="headerStyle">My To-DO-List!!</div>
         <CardContent className="cardStyle">
           <Grid container>
-            <Grid item xs={1} sm={1} md={1} lg={1}>
-              <div className="listLabelStyle">Add List</div>
-            </Grid>
             <Grid item xs sm md lg>
               <div>
                 <TextField
@@ -108,7 +107,7 @@ class DashBoard extends React.Component {
                 )}
               </div>
             </Grid>
-            <Grid item xs={1} sm={1} md={1} lg={1}>
+            <Grid item xs={2} sm={2} md={2} lg={2}>
               <Button
                 variant="contained"
                 color="primary"
@@ -141,7 +140,7 @@ class DashBoard extends React.Component {
               <Icon className="iconStyle">search</Icon>
             </Grid>
           </Grid>
-          <Grid item xs={1} sm={1} md={1} lg={1}>
+          <Grid item xs={2} sm={2} md={2} lg={2}>
             <Button variant="contained" color="secondary">
               Delete
             </Button>
@@ -198,15 +197,13 @@ class DashBoard extends React.Component {
       ) : (
         <h4 className="ErrorContent">No data found!!</h4>
       );
-    let dashboardContent = (
+    const dashboardContent = (
       <div>
         {this.state.width < 1000 ? (
           <Card className="screenHandleCard">
             <CardContent>
               Sorry for the inconvience!!! Please view on full screen :)
-              <CardContent>
-                Not compatible for mobile screen
-              </CardContent>
+              <CardContent>Not compatible for mobile screen</CardContent>
             </CardContent>
           </Card>
         ) : (
@@ -215,6 +212,7 @@ class DashBoard extends React.Component {
             <div>{searchCard}</div>
             <Divider />
             <div>
+            <h3 className="expiredHeader">Current ListItems</h3>
               {this.state.searchText.length < 0 ? displayData : searchMatched}
               <Divider />
             </div>

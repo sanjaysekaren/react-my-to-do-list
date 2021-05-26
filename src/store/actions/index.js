@@ -6,4 +6,4 @@ export {
   UpdateItem,
   deleteItemsInList,
   deleteCompleteList,
-} from "../containers/dashboard/dashboardAction";
+} from "./dashboardAction";

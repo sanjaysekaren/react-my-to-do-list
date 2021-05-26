@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { dashboardReducer } from "../containers/dashboard/dashboardReducer";
+import { dashboardReducer } from "./dashboardReducer";
 
 const rootReducer = combineReducers({
   dashboardReducers: dashboardReducer,
